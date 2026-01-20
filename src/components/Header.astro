@@ -1,13 +1,13 @@
 ---
-import ButtonLink from "../components/ButtonLink.astro";
+import ButtonLink from "./ButtonLink.astro";
+import Container from "./Container.astro";
 ---
-
-<div class="container">  
+<Container>  
   <header id="header">
     <div class="content">
       <h1>
       <span>Hi, I am Aravind.</span>
-        <span><span class="accent">Full-stack</span> Developer!</span>
+        <span><span class="accent">Full-stack</span> Specialist!</span>
       </h1>
       <p class="description">
         I’m a Full-Stack Developer specializing in React.js, Next.js, Node.js,
@@ -16,13 +16,13 @@ import ButtonLink from "../components/ButtonLink.astro";
         integrations.
       </p>
       <div class="button-container">
-        <ButtonLink href="/projects" text="View projects" variant="secondary"/>
-        <ButtonLink href="/resume.pdf" text="Download resume" isDownload={true}/>
+         <ButtonLink href="/projects" text="View projects" variant='secondary' />
+         <ButtonLink href="/resume.pdf" text="Download resume" isDownload={true}/>
       </div>
     </div>
     <img src="/images/me.png" />
   </header>
-</container>
+</Container>
 
 <style>
    #header {
@@ -31,7 +31,6 @@ import ButtonLink from "../components/ButtonLink.astro";
     justify-items: center;
     gap: 80px;
     align-items: center;
-    margin-top: 60px;
 
     img {
         width: 200px;
@@ -79,14 +78,5 @@ import ButtonLink from "../components/ButtonLink.astro";
     }
   }
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 60px;
-
-    @media screen and (max-width: 1000px) {
-      & {
-        padding: 0 24px;
-    }
-  }
+ 
 </style>
