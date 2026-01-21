@@ -1,4 +1,6 @@
 ---
+import Section from "./Section.astro";
+import SectionHeader from "./SectionHeader.astro"
 const heading = "My Projects";
 const cta = { text: 'View All', href: '/projects' };
 
@@ -29,25 +31,22 @@ const projects = [
     }
   ]
   ---
-<section>
-  <div class="section-header">
-      <h2>
-        {heading}
-      </h2>
-      <a href={cta.href}>{cta.text}</a>
-  </div>
+<Section dark={true}>
+  <SectionHeader cta={cta} heading={heading}/>
 
   <div class="projects-container">
     {
-      projects.map( project => (
+      projects.map(project => (
         <div class="card">
           <img src={project.image} alt={project.title}/>
           <h3><a href={project.liveSiteURL}>{project.title}</a></h3>
         </div>
       ))
     }
+    <!-- dynamically render project cards -->
+    <!-- each card has a class of card, an image, and an h3 that links to the liveSiteURL -->
   </div>
-</section>
+</Section>
 
 <style>
 
@@ -82,26 +81,5 @@ const projects = [
       
     }
   }
-
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
-    
-    h2 {
-        margin: 0;
-        font-size: 32px;
-        font-weight: 600;
-    } 
-
-    a {
-        size: 16px;
-        text-decoration: none;
-        font-weight: 400;
-        color: var(--dark);
-    }
-  }
-
 
 </style>
